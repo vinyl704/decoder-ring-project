@@ -1,10 +1,3 @@
-/*
-    The input could include spaces and letters as well as special characters such as #, $, *, etc.
-Spaces should be maintained throughout.
-Capital letters can be ignored.
-The alphabet parameter must be a string of exactly 26 characters, which could include special characters such as #, $, *, etc. Otherwise, it should return false.
-All the characters in the alphabet parameter must be unique. Otherwise, it should return false.
-*/
 
 // Write your tests here!
 const {expect} = require('chai');

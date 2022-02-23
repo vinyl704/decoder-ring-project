@@ -2,12 +2,6 @@
 const {expect} = require('chai');
 const {caesar} = require('../src/caesar');
 
-/*
-If the shift value isn't present, equal to 0, less than -25, or greater than 25, the function should return false.
-Spaces should be maintained throughout, as should other nonalphabetic symbols.
-Capital letters can be ignored.
-If a letter is shifted so that it goes "off" the alphabet (e.g., a shift of 3 on the letter z), it should wrap around to the front of the alphabet (e.g., z becomes c).
-*/
 describe('tests for caesar() function', () => {
     it('should return false if shift equals 0', () => {
         const message = "Hello from the other side";
