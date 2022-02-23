@@ -8,21 +8,22 @@ const substitutionModule = (function () {
 
   function substitution(input, alphabet, encode = true) {
     // your solution code here
-    if(!alphabet) return false;
-    if([...alphabet].length !== 26) return false;
+    if(!alphabet) return false; // checking for existence of cipher key
+    if([...alphabet].length !== 26) return false; //making sure the cipher key has only enough letters to mask alphabet
     if(![...alphabet].every(letter=>alphabet.indexOf(letter) === alphabet.lastIndexOf(letter))) return false;
-    let sub = [..."abcdefghijklmnopqrstuvwxyz"];
-    let alpha = [...alphabet];
+    let sub = [..."abcdefghijklmnopqrstuvwxyz"]; //spreading true alphabet across an array
+    let alpha = [...alphabet];//spreading cipher alphabet
 
     input = [...input.toLowerCase()];
-    for(let letter in input){
-      if(input[letter] === " "){input[letter]=" "}
-      else {encode
-      ?input[letter] = alpha[sub.indexOf(input[letter])]
-      :input[letter] = sub[alpha.indexOf(input[letter])]
+    for(let letter in input){ //start of for in loop
+      if(input[letter] === " ") input[letter]=" "  //if statement
+        else {//else
+          encode //checking operation mode
+            ?input[letter] = alpha[sub.indexOf(input[letter])]
+            :input[letter] = sub[alpha.indexOf(input[letter])]
+      }
     }
-    }
-    return (input.join(""))
+      return (input.join("")) //return encoded string
   }
 
   return {
