@@ -16,7 +16,6 @@ const caesarModule = (function () {
       const char = input[i].toLowerCase();
       const position =alphabet.indexOf(char);
       if(alphabet.includes(input[i].toLowerCase())){
-        //if(position !== -1){
           //encode section
           if(encode === true){
             if(position + shift < 0){
@@ -33,10 +32,9 @@ const caesarModule = (function () {
               input[i] = alphabet[(position-shift) - 26];
             } else input[i]=alphabet[position-shift];
           }
-        //}
       };
     };
-    //decode/encode each letter
+    //combine into string
     return input.join("");
   }
 

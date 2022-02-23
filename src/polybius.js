@@ -8,6 +8,8 @@ const polybiusModule = (function () {
 
   function polybius(input, encode = true) {
     // your solution code here
+
+    //Creating cipher key
     const decoderKey = [
      [11,'a'],[21,'b'],[31,'c'],[41,'d'],
      [51,'e'],[12,'f'],[22,'g'],[32,'h'],
@@ -17,11 +19,11 @@ const polybiusModule = (function () {
      [15,'v'],[25,'w'],[35,'x'],[45,'y'],
      [55,'z'],
     ];
-    let newStr='';
+    let newStr=''; //String variable for storing/building new message
     //encode
     if(encode){
       for(let i=0;i<input.length;i++){
-        const char = input[i]
+        const char = input[i].toLowerCase()
         char === " "
           ?newStr+=" "
           :null
@@ -47,7 +49,7 @@ const polybiusModule = (function () {
         }  
       }
     }
-      return newStr
+    return newStr
   }
 
   return {
